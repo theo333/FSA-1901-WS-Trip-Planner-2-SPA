@@ -10,6 +10,8 @@ var {
   Activity
 } = require('./models');
 
+console.log(db);
+
 var data = {
   hotel: [
     {

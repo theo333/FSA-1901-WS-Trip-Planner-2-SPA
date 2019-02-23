@@ -1,7 +1,7 @@
 const mapboxgl = require("mapbox-gl");
 const buildMarker = require("./marker.js");
 
-mapboxgl.accessToken = "YOUR API TOKEN HERE";
+mapboxgl.accessToken = "pk.eyJ1IjoidGhlbzMzMyIsImEiOiJjanNmZmlyNm4xMHVqM3l0bGVxenVvOWw0In0.bZVyyflQ7BPzt3ohmxw7Tw";
 
 const fullstackCoords = [-74.009, 40.705] // NY
 // const fullstackCoords = [-87.6320523, 41.8881084] // CHI
@@ -15,3 +15,7 @@ const map = new mapboxgl.Map({
 
 const marker = buildMarker("activities", fullstackCoords);
 marker.addTo(map);
+
+fetch('/api')
+  .then( response => console.log(response.json()))
+  .then()
