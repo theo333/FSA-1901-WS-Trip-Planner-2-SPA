@@ -16,6 +16,27 @@ const map = new mapboxgl.Map({
 const marker = buildMarker("activities", fullstackCoords);
 marker.addTo(map);
 
-fetch('/api')
-  .then( response => console.log(response.json()))
-  .then()
+
+const fetchOptions = () => {
+  return fetch('/api')
+  .then( response => response.json())
+  .then( ({ hotels, activities, restaurants }) => {
+
+    hotels.forEach( hotel => {
+      const parent = document.querySelector('#hotels-choices');
+      console.log(parent);
+      const option = document.createElement('option');
+      option.text = hotel.name;
+      parent.appendChild(option);
+
+      // parent.addEventListener()
+    })
+  })
+}
+
+fetchOptions();
+
+
+
+  
+

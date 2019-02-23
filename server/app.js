@@ -15,7 +15,7 @@ app.get('/api', (req, res, next) => {
 		Activity.findAll( { include: [Place] } ),
 		Restaurant.findAll( { include: [Place] } )
 	])
-		.then(([hotel, activity, restaurant]) => res.json({ hotel, activity, restaurant}))
+		.then(([hotels, activities, restaurants ]) => res.json({ hotels, activities, restaurants }))
 });
 
 app.use((req, res, next) => {
